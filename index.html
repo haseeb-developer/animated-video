@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Video Project</title>
+  </head>
+  <body>
+    <div class="product-desc__video">
+      <div class="video-container" id="videoContainer">
+        <video id="myVideo" width="532" height="300">
+          <source src="./assets/video2.mp4" type="video/mp4" />
+        </video>
+
+        <div class="overlay" id="videoOverlay">
+          <div class="overlay-text">
+            Raven hoodie with black colored design.
+          </div>
+        </div>
+
+        <button class="play-pause-btn" id="playPauseBtn">
+          <img src="./assets/play.png" alt="Play" id="playIcon" />
+          <i class="fas fa-pause" id="pauseIcon" style="display: none"></i>
+        </button>
+
+        <div class="timer" id="timer"></div>
+
+        <div class="fullscreen-btn" id="fullscreenBtn">
+          <i class="fas fa-expand"></i>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

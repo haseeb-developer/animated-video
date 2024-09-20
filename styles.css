@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+  align-items: center;
+  height: 100vh;
+}
+
+.video-container {
+  position: relative;
+  max-width: 532px;
+  width: 100%;
+  height: 280px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease, border-radius 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/overlayimage.png') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  border-radius: 10px;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.371);
+  border-radius: 10px;
+  transition: opacity 0.6s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  max-width: 100%;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2;
+  transition: transform 0.5s ease, opacity 0.6s ease;
+}
+
+.play-pause-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.play-pause-btn img {
+  width: 53px;
+  height: 53px;
+  transition: transform 0.3s ease;
+}
+
+.play-pause-btn:hover img {
+  transform: scale(1.1);
+}
+
+.play-pause-btn i {
+  font-size: 40px;
+  color: white;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  z-index: 2;
+  border-radius: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fullscreen-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  border-radius: 50%;
+}
+
+.fullscreen-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .play-pause-btn i {
+    font-size: 30px;
+  }
+
+  .play-pause-btn img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .timer {
+    font-size: 14px;
+  }
+
+  .overlay-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .play-pause-btn i {
+    font-size: 25px;
+  }
+
+  .play-pause-btn img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .timer {
+    font-size: 12px;
+  }
+
+  .overlay-text {
+    font-size: 14px;
+    max-width: 70%;
+  }
+}
+
+.product-desc__video {
+  width: 100%;
+}
+
+.product__video {
+  max-width: 532px;
+  width: 100%;
+  height: auto;
+}
+
+.product__video-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.product__video-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.product__video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-desc__video {
+  max-width: 532px;
+}
